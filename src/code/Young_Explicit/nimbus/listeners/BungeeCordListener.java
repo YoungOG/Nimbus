@@ -20,7 +20,7 @@ public class BungeeCordListener implements PluginMessageListener {
 				Player pl = Bukkit.getPlayer(UUID.fromString(mes[0]));
 				if (pl != null) {
 					pl.sendPluginMessage(Nimbus.getInstance(), "Pure", (pl.getUniqueId() + "|banned").getBytes());
-					pl.kickPlayer("§cYour account has been suspended from the BreakMC Network.\n \n§cVisit BreakMC.com to purchase an unban or submit an appeal."); // We
+					pl.kickPlayer("Â§cYour account has been suspended from the BreakMC Network.\n \nÂ§cVisit BreakMC.com to purchase an unban or submit an appeal."); // We
 																																									// will
 																																									// be
 																																									// listening

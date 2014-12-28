@@ -11,7 +11,7 @@ public class PlayerListeners implements Listener {
 
 	@EventHandler
 	public void onJoin(PlayerJoinEvent e) {
-		e.setJoinMessage("ง7" + e.getPlayer().getName() + " has joined the game.");
+		e.setJoinMessage("ยง7" + e.getPlayer().getName() + " has joined the game.");
 	}
 	
 	@EventHandler
@@ -22,7 +22,7 @@ public class PlayerListeners implements Listener {
 	@EventHandler
 	public void onDeath(PlayerDeathEvent e) {
 		if (e.getEntity().getKiller() instanceof Player) {
-			e.setDeathMessage(e.getEntity().getDisplayName() + " ง7 has been slain by งr" + e.getEntity().getKiller().getDisplayName());
+			e.setDeathMessage(e.getEntity().getDisplayName() + " ยง7 has been slain by ยงr" + e.getEntity().getKiller().getDisplayName());
 		}
 	}
 }

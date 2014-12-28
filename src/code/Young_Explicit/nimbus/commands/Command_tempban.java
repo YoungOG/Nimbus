@@ -21,7 +21,7 @@ public class Command_tempban implements CommandExecutor {
 		}
 
 		if (args.length < 3) {
-			p.sendMessage(String.format("§cUsage: /%s <player> <time> <reason>", label));
+			p.sendMessage(String.format("Â§cUsage: /%s <player> <time> <reason>", label));
 			return true;
 		}
 

@@ -20,7 +20,7 @@ public class Command_tempbanip implements CommandExecutor {
 		}
 
 		if (args.length < 3) {
-			p.sendMessage(String.format("§cUsage: /%s <IP Address> <time>", label));
+			p.sendMessage(String.format("Â§cUsage: /%s <IP Address> <time>", label));
 			return true;
 		}
 		String ip = args[0];

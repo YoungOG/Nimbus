@@ -21,7 +21,7 @@ public class Command_ban implements CommandExecutor {
 		}
 
 		if (args.length < 2) {
-			p.sendMessage(String.format("§cUsage: /%s <player> <reason>", label));
+			p.sendMessage(String.format("Â§cUsage: /%s <player> <reason>", label));
 			return true;
 		}
 		

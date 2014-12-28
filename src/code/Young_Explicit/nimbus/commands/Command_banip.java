@@ -20,7 +20,7 @@ public class Command_banip implements CommandExecutor {
 		}
 
 		if (args.length < 2) {
-			p.sendMessage(String.format("§cUsage: /%s <IP Address> <reason>", label));
+			p.sendMessage(String.format("Â§cUsage: /%s <IP Address> <reason>", label));
 			return true;
 		}
 		String ip = args[0];

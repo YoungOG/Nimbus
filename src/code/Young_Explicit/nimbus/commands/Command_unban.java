@@ -18,7 +18,7 @@ public class Command_unban implements CommandExecutor {
 		}
 
 		if (args.length < 1) {
-			p.sendMessage(String.format("§cUsage: /%s <player> ", label));
+			p.sendMessage(String.format("Â§cUsage: /%s <player> ", label));
 			return true;
 		}
 

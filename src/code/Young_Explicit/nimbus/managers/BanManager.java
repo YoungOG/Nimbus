@@ -25,15 +25,15 @@ public class BanManager {
 	private DatabaseManager dm = Nimbus.getInstance().getDatabaseManager();
 
 	public void mutePlayer(Player muted, CommandSender muter) {
-		muted.sendMessage("§cYou have been muted for: ");
+		muted.sendMessage("Â§cYou have been muted for: ");
 	}
 
 	public void kickPlayer(Player kicked, CommandSender kicker, String reason) {
-		kicked.kickPlayer("§cYou have been kicked from the server:§\n \n§c" + reason);
+		kicked.kickPlayer("Â§cYou have been kicked from the server:Â§\n \nÂ§c" + reason);
 		if (kicker instanceof Player) {
-			Bukkit.broadcastMessage("§e" + kicked.getName() + " has been kicked by " + ((Player) kicker).getDisplayName() + "§e.");
+			Bukkit.broadcastMessage("Â§e" + kicked.getName() + " has been kicked by " + ((Player) kicker).getDisplayName() + "Â§e.");
 		} else {
-			Bukkit.broadcastMessage("§e" + kicked.getName() + " has been kicked by §4" + kicker.getName() + "§e.");
+			Bukkit.broadcastMessage("Â§e" + kicked.getName() + " has been kicked by Â§4" + kicker.getName() + "Â§e.");
 		}
 	}
 
@@ -52,12 +52,12 @@ public class BanManager {
 		PubSubWriter writer = new PubSubWriter(dm.getJedis(), "update");
 		writer.publish("updateProfile|" + bannedUUID.toString());
 
-		banned.kickPlayer("§cYour account has been suspended from the BreakMC Network.\n \n§cVisit BreakMC.com to purchase an unban or submit an appeal.");
+		banned.kickPlayer("Â§cYour account has been suspended from the BreakMC Network.\n \nÂ§cVisit BreakMC.com to purchase an unban or submit an appeal.");
 
 	    if (banner instanceof Player) {
-	    	Bukkit.broadcastMessage("§e" + banned.getName() + " has been banned by " + ((Player)banner).getDisplayName() + "§e.");
+	    	Bukkit.broadcastMessage("Â§e" + banned.getName() + " has been banned by " + ((Player)banner).getDisplayName() + "Â§e.");
 	    } else {
-	    	Bukkit.broadcastMessage("§e" + banned.getName() + " has been banned by §4" + banner.getName() + "§e.");
+	    	Bukkit.broadcastMessage("Â§e" + banned.getName() + " has been banned by Â§4" + banner.getName() + "Â§e.");
 	    }
 	}
 
@@ -82,14 +82,14 @@ public class BanManager {
 		}
 		
 		if (banner instanceof Player) {
-			Bukkit.broadcast("§eIP ddress" + address + " has been banned by " + ((Player) banner).getDisplayName() + "§e." , "nimbus.ban.viewip");
+			Bukkit.broadcast("Â§eIP ddress" + address + " has been banned by " + ((Player) banner).getDisplayName() + "Â§e." , "nimbus.ban.viewip");
 		} else {
-			Bukkit.broadcast("§eIP ddress" + address + " has been banned by §4" + banner.getName() + "§e.", "nimbus.ban.viewip");
+			Bukkit.broadcast("Â§eIP ddress" + address + " has been banned by Â§4" + banner.getName() + "Â§e.", "nimbus.ban.viewip");
 		}
 
 		for (Player all : Bukkit.getOnlinePlayers()) {
 			if (all.getAddress().getAddress().getHostAddress().replace("/", "").equals(address)) {
-				all.kickPlayer("§cThis IP Address has been suspended from the BreakMC Network.\n \n§cVisit BreakMC.com to purchase an unban or submit an appeal.");
+				all.kickPlayer("Â§cThis IP Address has been suspended from the BreakMC Network.\n \nÂ§cVisit BreakMC.com to purchase an unban or submit an appeal.");
 			}
 		}
 	}
@@ -117,21 +117,21 @@ public class BanManager {
 			}
 			
 			if (banner instanceof Player) {
-				Bukkit.broadcast("§eIP ddress" + address + " has been temporarily banned by " + ((Player) banner).getDisplayName() + "§e." , "nimbus.ban.viewip");
+				Bukkit.broadcast("Â§eIP ddress" + address + " has been temporarily banned by " + ((Player) banner).getDisplayName() + "Â§e." , "nimbus.ban.viewip");
 			} else {
-				Bukkit.broadcast("§eIP ddress" + address + " has been temporarily banned by §4" + banner.getName() + "§e.", "nimbus.ban.viewip");
+				Bukkit.broadcast("Â§eIP ddress" + address + " has been temporarily banned by Â§4" + banner.getName() + "Â§e.", "nimbus.ban.viewip");
 			}
 
-			Bukkit.broadcast("§a" + address + " has been banned by " + banner.getName(), "nimbus.ban.viewip");
+			Bukkit.broadcast("Â§a" + address + " has been banned by " + banner.getName(), "nimbus.ban.viewip");
 
 			for (Player all : Bukkit.getOnlinePlayers()) {
 				if (all.getAddress().getAddress().getHostAddress().replace("/", "").equals(address)) {
-					all.kickPlayer("§cThis IP Address has been suspended from the BreakMC Network.\n \n§cVisit BreakMC.com to purchase an unban or submit an appeal.");
+					all.kickPlayer("Â§cThis IP Address has been suspended from the BreakMC Network.\n \nÂ§cVisit BreakMC.com to purchase an unban or submit an appeal.");
 				}
 			}
 
 		} catch (Exception ex) {
-			banner.sendMessage("§cAn error occurred while parsing the time!\nError: " + ex.getLocalizedMessage() + "\nIf you see no problem with your time format, nag rbrick or Young_Explicit!");
+			banner.sendMessage("Â§cAn error occurred while parsing the time!\nError: " + ex.getLocalizedMessage() + "\nIf you see no problem with your time format, nag rbrick or Young_Explicit!");
 			ex.printStackTrace();
 		}
 	}
@@ -151,7 +151,7 @@ public class BanManager {
 
 			banned.kickPlayer(reason);
 		} catch (Exception ex) {
-			banner.sendMessage("§cAn error occurred while parsing the time!\nError: " + ex.getLocalizedMessage() + "\nIf you see no problem with your time format, nag rbrick or Young_Explicit!");
+			banner.sendMessage("Â§cAn error occurred while parsing the time!\nError: " + ex.getLocalizedMessage() + "\nIf you see no problem with your time format, nag rbrick or Young_Explicit!");
 			ex.printStackTrace();
 		}
 	}
@@ -216,11 +216,11 @@ public class BanManager {
 					
 					dm.getJedis().publish("update", "updateProfile|" + tProf.toString());
 					
-					unbanner.sendMessage("§aProfile: " + tProf.getUniqueId());
+					unbanner.sendMessage("Â§aProfile: " + tProf.getUniqueId());
 				}
 			}
 		} else {
-			unbanner.sendMessage("§cCould not find any accounts affiliated with the IP '" + address + "'.");
+			unbanner.sendMessage("Â§cCould not find any accounts affiliated with the IP '" + address + "'.");
 		}
 	}
 	
@@ -241,22 +241,22 @@ public class BanManager {
 		}
 		
 		if (cbProf != null) {
-			p.sendMessage("§c** §7" + cbProf.getPlayerName() + " §c**");
-			p.sendMessage("§7Account Banned: " + (cbProf.isPermBanned() ? "§ctrue - "  + (cbProf.isPermBanned() && !cbProf.isTempBanned() ? "§cPermanent" : "§cTemporary") : "§afalse"));
+			p.sendMessage("Â§c** Â§7" + cbProf.getPlayerName() + " Â§c**");
+			p.sendMessage("Â§7Account Banned: " + (cbProf.isPermBanned() ? "Â§ctrue - "  + (cbProf.isPermBanned() && !cbProf.isTempBanned() ? "Â§cPermanent" : "Â§cTemporary") : "Â§afalse"));
 			if (cbProf.isTempBanned()) {
 				TempBan tb = new Gson().fromJson(dm.getJedis().get("{tempban}" + cbProf.getUniqueId().toString()), TempBan.class);
-				p.sendMessage("§7Ban Time remaining: §c" + DateUtil.formatDateDiff(tb.getBannedUntil()));
+				p.sendMessage("Â§7Ban Time remaining: Â§c" + DateUtil.formatDateDiff(tb.getBannedUntil()));
 			}
 			
 			if (cbProf.isPermBanned()) {
 				Ban b = new Gson().fromJson(dm.getJedis().get("{ban}" + cbProf.getUniqueId().toString()), Ban.class);
-				p.sendMessage("§7Account Ban Reason: §c" + b.getReason());
+				p.sendMessage("Â§7Account Ban Reason: Â§c" + b.getReason());
 			} else if (cbProf.isTempBanned()) {
 				TempBan tb = new Gson().fromJson(dm.getJedis().get("{tempban}" + cbProf.getUniqueId().toString()), TempBan.class);
-				p.sendMessage("§7Account Ban Reason: §c" + tb.getReason());
+				p.sendMessage("Â§7Account Ban Reason: Â§c" + tb.getReason());
 			}
 		} else {
-			p.sendMessage("§cProfile for '" + name + "' not found.");
+			p.sendMessage("Â§cProfile for '" + name + "' not found.");
 		}
 	}
 }

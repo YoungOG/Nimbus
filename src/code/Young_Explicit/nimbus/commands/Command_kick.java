@@ -18,11 +18,11 @@ public class Command_kick implements CommandExecutor {
 			if (Bukkit.getPlayer(args[0]) != null) {
 				bm.kickPlayer(Bukkit.getPlayer(args[1]), p, StringUtils.join(args, ' ', 2, args.length));
 			} else {
-				p.sendMessage("§cIncorrect Player");
+				p.sendMessage("Â§cIncorrect Player");
 				return false;
 			}
 		} else {
-			p.sendMessage("§cIncorrect Usage");
+			p.sendMessage("Â§cIncorrect Usage");
 			return false;
 		}
 		return false;
