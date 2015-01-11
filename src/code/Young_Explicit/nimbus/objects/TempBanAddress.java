@@ -18,6 +18,10 @@ public class TempBanAddress {
 		return address;
 	}
 
+	public String getBanner() {
+		return banner;
+	}
+
 	public void setAddress(String address) {
 		this.address = address;
 	}

@@ -5,183 +5,183 @@ import java.util.UUID;
 
 public class Profile {
 
-	UUID id;
-	String playerName, address, currentServer, lastServer;
-	List<String> alts, ips;
-	boolean isOnline, isRegistered, isMuted, isPermBanned, isTempBanned;
-	int pin, votes, logins, mutes, kicks, tempbans;
-	long time;
+    UUID id;
+    String playerName, address, currentServer, lastServer;
+    List<String> alts, ips;
+    boolean isOnline, isRegistered, isMuted, isPermBanned, isTempBanned;
+    int pin, votes, logins, mutes, kicks, tempbans;
+    long time;
 
-	public Profile(UUID id, String playerName, String address, List<String> alts, List<String> ips, String currentServer, String lastServer, Boolean isOnline, Boolean isRegistered, Boolean isMuted, Boolean isTempBanned, Boolean isPermBanned, Integer pin, Integer votes, Integer logins, Integer mutes, Integer kicks, Integer tempbans, Long time) {
-		this.id = id;
-		this.playerName = playerName;
-		this.address = address;
-		this.alts = alts;
-		this.ips = ips;
-		this.currentServer = currentServer;
-		this.lastServer = lastServer;
-		this.isOnline = isOnline;
-		this.isRegistered = isRegistered;
-		this.isTempBanned = isTempBanned;
-		this.isPermBanned = isPermBanned;
-		this.pin = pin;
-		this.votes = votes;
-		this.logins = logins;
-		this.mutes = mutes;
-		this.kicks = kicks;
-		this.tempbans = tempbans;
-		this.time = time;
-	}
+    public Profile(UUID id, String playerName, String address, List<String> alts, List<String> ips, String currentServer, String lastServer, Boolean isOnline, Boolean isRegistered, Boolean isMuted, Boolean isTempBanned, Boolean isPermBanned, Integer pin, Integer votes, Integer logins, Integer mutes, Integer kicks, Integer tempbans, Long time) {
+        this.id = id;
+        this.playerName = playerName;
+        this.address = address;
+        this.alts = alts;
+        this.ips = ips;
+        this.currentServer = currentServer;
+        this.lastServer = lastServer;
+        this.isOnline = isOnline;
+        this.isRegistered = isRegistered;
+        this.isTempBanned = isTempBanned;
+        this.isPermBanned = isPermBanned;
+        this.pin = pin;
+        this.votes = votes;
+        this.logins = logins;
+        this.mutes = mutes;
+        this.kicks = kicks;
+        this.tempbans = tempbans;
+        this.time = time;
+    }
 
-	public UUID getUniqueId() {
-		return id;
-	}
+    public UUID getUniqueId() {
+        return id;
+    }
 
-	public void setUniqueId(UUID id) {
-		this.id = id;
-	}
+    public void setUniqueId(UUID id) {
+        this.id = id;
+    }
 
-	public String getPlayerName() {
-		return playerName;
-	}
+    public String getPlayerName() {
+        return playerName;
+    }
 
-	public void setPlayerName(String playerName) {
-		this.playerName = playerName;
-	}
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public List<String> getAlts() {
-		return alts;
-	}
+    public List<String> getAlts() {
+        return alts;
+    }
 
-	public List<String> getIps() {
-		return ips;
-	}
+    public void setAlts(List<String> alts) {
+        this.alts = alts;
+    }
 
-	public String getCurrentServer() {
-		return currentServer;
-	}
+    public List<String> getIps() {
+        return ips;
+    }
 
-	public void setCurrentServer(String currentServer) {
-		this.currentServer = currentServer;
-	}
+    public void setIps(List<String> ips) {
+        this.ips = ips;
+    }
 
-	public String getLastServer() {
-		return lastServer;
-	}
+    public String getCurrentServer() {
+        return currentServer;
+    }
 
-	public void setLastServer(String lastServer) {
-		this.lastServer = lastServer;
-	}
+    public void setCurrentServer(String currentServer) {
+        this.currentServer = currentServer;
+    }
 
-	public boolean isOnline() {
-		return isOnline;
-	}
+    public String getLastServer() {
+        return lastServer;
+    }
 
-	public void setOnline(boolean isOnline) {
-		this.isOnline = isOnline;
-	}
+    public void setLastServer(String lastServer) {
+        this.lastServer = lastServer;
+    }
 
-	public boolean isRegistered() {
-		return isRegistered;
-	}
+    public boolean isOnline() {
+        return isOnline;
+    }
 
-	public void setRegistered(boolean isRegistered) {
-		this.isRegistered = isRegistered;
-	}
+    public void setOnline(boolean isOnline) {
+        this.isOnline = isOnline;
+    }
 
-	public boolean isMuted() {
-		return isMuted;
-	}
+    public boolean isRegistered() {
+        return isRegistered;
+    }
 
-	public void setMuted(boolean isMuted) {
-		this.isMuted = isMuted;
-	}
+    public void setRegistered(boolean isRegistered) {
+        this.isRegistered = isRegistered;
+    }
 
-	public boolean isTempBanned() {
-		return isTempBanned;
-	}
+    public boolean isMuted() {
+        return isMuted;
+    }
 
-	public void setTempBanned(boolean isTempBanned) {
-		this.isTempBanned = isTempBanned;
-	}
+    public void setMuted(boolean isMuted) {
+        this.isMuted = isMuted;
+    }
 
-	public boolean isPermBanned() {
-		return isPermBanned;
-	}
+    public boolean isTempBanned() {
+        return isTempBanned;
+    }
 
-	public void setPermBanned(boolean isPermBanned) {
-		this.isPermBanned = isPermBanned;
-	}
+    public void setTempBanned(boolean isTempBanned) {
+        this.isTempBanned = isTempBanned;
+    }
 
-	public int getPin() {
-		return pin;
-	}
+    public boolean isPermBanned() {
+        return isPermBanned;
+    }
 
-	public void setPin(int pin) {
-		this.pin = pin;
-	}
+    public void setPermBanned(boolean isPermBanned) {
+        this.isPermBanned = isPermBanned;
+    }
 
-	public int getVotes() {
-		return votes;
-	}
+    public int getPin() {
+        return pin;
+    }
 
-	public void setVotes(int votes) {
-		this.votes = votes;
-	}
+    public void setPin(int pin) {
+        this.pin = pin;
+    }
 
-	public int getLogins() {
-		return logins;
-	}
+    public int getVotes() {
+        return votes;
+    }
 
-	public void setLogins(int logins) {
-		this.logins = logins;
-	}
+    public void setVotes(int votes) {
+        this.votes = votes;
+    }
 
-	public int getKicks() {
-		return kicks;
-	}
+    public int getLogins() {
+        return logins;
+    }
 
-	public void setKicks(int kicks) {
-		this.kicks = kicks;
-	}
+    public void setLogins(int logins) {
+        this.logins = logins;
+    }
 
-	public int getMutes() {
-		return mutes;
-	}
+    public int getKicks() {
+        return kicks;
+    }
 
-	public void setMutes(int mutes) {
-		this.mutes = mutes;
-	}
+    public void setKicks(int kicks) {
+        this.kicks = kicks;
+    }
 
-	public int getTempBans() {
-		return tempbans;
-	}
+    public int getMutes() {
+        return mutes;
+    }
 
-	public void setTempBans(int tempbans) {
-		this.tempbans = tempbans;
-	}
+    public void setMutes(int mutes) {
+        this.mutes = mutes;
+    }
 
-	public long getTime() {
-		return time;
-	}
+    public int getTempBans() {
+        return tempbans;
+    }
 
-	public void setTime(long time) {
-		this.time = time;
-	}
+    public void setTempBans(int tempbans) {
+        this.tempbans = tempbans;
+    }
 
-	public void setAlts(List<String> alts) {
-		this.alts = alts;
-	}
+    public long getTime() {
+        return time;
+    }
 
-	public void setIps(List<String> ips) {
-		this.ips = ips;
-	}
+    public void setTime(long time) {
+        this.time = time;
+    }
 }

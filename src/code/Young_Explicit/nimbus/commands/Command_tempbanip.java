@@ -15,7 +15,7 @@ public class Command_tempbanip implements CommandExecutor {
 
 	public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
 		if (!p.hasPermission("nimbus.tempbanip")) {
-			p.sendMessage("No Permissions Message");
+			p.sendMessage("§cPermission denied.");
 			return false;
 		}
 

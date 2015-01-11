@@ -16,7 +16,7 @@ public class Command_tempban implements CommandExecutor {
 
 	public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
 		if (!p.hasPermission("nimbus.tempban")) {
-			p.sendMessage("No Permissions Message");
+			p.sendMessage("§cPermission denied.");
 			return false;
 		}
 
@@ -25,8 +25,12 @@ public class Command_tempban implements CommandExecutor {
 			return true;
 		}
 
-		Player target = Bukkit.getPlayer(args[0]);
-		bm.tempBan(target, p, args[1], StringUtils.join(args, ' ', 2, args.length)); // lol
+		if (Bukkit.getPlayer(args[0]) != null) {
+			Player target = Bukkit.getPlayer(args[0]);
+			bm.tempBan(target, p, args[1], StringUtils.join(args, ' ', 2, args.length));
+		} else {
+			bm.tempBanName(args[0], p, args[1], StringUtils.join(args, ' ', 2, args.length));
+		}
 
 		return true;
 	}

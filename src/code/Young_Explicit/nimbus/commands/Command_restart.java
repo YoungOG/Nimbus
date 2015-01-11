@@ -6,23 +6,19 @@ import org.bukkit.command.CommandSender;
 
 import code.Young_Explicit.nimbus.Nimbus;
 import code.Young_Explicit.nimbus.managers.BanManager;
+import code.Young_Explicit.nimbus.managers.ServerManager;
 
-public class Command_checkban implements CommandExecutor {
+public class Command_restart implements CommandExecutor {
 
 	BanManager bm = Nimbus.getInstance().getBanManager();
 
 	public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
-		if (!p.hasPermission("nimbus.checkban")) {
+		if (!p.hasPermission("nimbus.restart")) {
 			p.sendMessage("§cPermission denied.");
 			return false;
 		}
 
-		if (args.length != 1) {
-			p.sendMessage(String.format("§cUsage: /%s <player> <reason>", label));
-			return true;
-		}
-		
-		bm.checkBan(p, args[0]);
+		ServerManager.restart();
 
 		return true;
 	}

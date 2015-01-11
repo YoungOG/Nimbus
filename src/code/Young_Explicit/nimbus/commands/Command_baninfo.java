@@ -7,12 +7,12 @@ import org.bukkit.command.CommandSender;
 import code.Young_Explicit.nimbus.Nimbus;
 import code.Young_Explicit.nimbus.managers.BanManager;
 
-public class Command_checkban implements CommandExecutor {
+public class Command_baninfo implements CommandExecutor {
 
 	BanManager bm = Nimbus.getInstance().getBanManager();
 
 	public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
-		if (!p.hasPermission("nimbus.checkban")) {
+		if (!p.hasPermission("nimbus.baninfo")) {
 			p.sendMessage("§cPermission denied.");
 			return false;
 		}
@@ -22,7 +22,7 @@ public class Command_checkban implements CommandExecutor {
 			return true;
 		}
 		
-		bm.checkBan(p, args[0]);
+		bm.checkStaff(p, args[0]);
 
 		return true;
 	}

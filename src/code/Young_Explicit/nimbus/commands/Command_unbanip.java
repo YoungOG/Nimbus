@@ -14,7 +14,7 @@ public class Command_unbanip implements CommandExecutor {
 
 	public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
 		if (!p.hasPermission("nimbus.unbanip")) {
-			p.sendMessage("No Permissions Message");
+			p.sendMessage("§cPermission denied.");
 			return false;
 		}
 

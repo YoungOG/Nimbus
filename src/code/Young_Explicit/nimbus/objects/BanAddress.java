@@ -17,6 +17,10 @@ public class BanAddress {
 		return address;
 	}
 
+	public String getBanner() {
+		return banner;
+	}
+
 	public void setBannedAddress(String address) {
 		this.address = address;
 	}

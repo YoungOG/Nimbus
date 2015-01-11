@@ -13,11 +13,11 @@ public class Command_unban implements CommandExecutor {
 
 	public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
 		if (!p.hasPermission("nimbus.unban")) {
-			p.sendMessage("No Permissions Message");
+			p.sendMessage("§cPermission denied.");
 			return false;
 		}
 
-		if (args.length < 1) {
+		if (args.length != 1) {
 			p.sendMessage(String.format("§cUsage: /%s <player> ", label));
 			return true;
 		}

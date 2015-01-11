@@ -1,0 +1,38 @@
+name: Nimbus
+main: code.Young_Explicit.nimbus.Nimbus
+version: 1.0
+author: Young_Explicit
+commands:
+  ban:
+    usage: /ban <player> <reason>
+    description: Bans a player.
+  tempban:
+    usage: /tempban <player> <time>
+    description: Temporarily bans a player
+  banip:
+    usage: /banip <ip> <reason>
+    description: Bans a IP address from the network.
+  tempbanip:
+    usage: /tempbanip <ip> <time>
+    description: Temporarily bans a.
+  unban: 
+    usage: /unban <player>
+    description: Unbans a player from the server.
+  unbanip: 
+    usage: /unbanip <address>
+    description: Unbans a IP from the network.
+  checkban: 
+    usage: /checkban <name>
+    aliases: [cb]
+    description: Checks the ban information about the player.
+  baninfo: 
+    usage: /baninfo <name>
+    aliases: [bi]
+    description: Checks the ban information about the player.
+  restart: 
+    usage: /restart
+    aliases: [sr]
+    description: Schedules a Restart.
+permissions:
+  nimbus.ban.viewip:
+    default: op

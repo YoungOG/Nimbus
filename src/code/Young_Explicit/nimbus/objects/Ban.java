@@ -18,6 +18,10 @@ public class Ban {
 		return bannedUUID;
 	}
 
+	public String getBanner() {
+		return banner;
+	}
+
 	public void setBannedUUID(UUID bannedUUID) {
 		this.bannedUUID = bannedUUID;
 	}

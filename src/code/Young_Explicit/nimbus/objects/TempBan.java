@@ -20,6 +20,10 @@ public class TempBan {
 		return bannedUUID;
 	}
 
+	public String getBanner() {
+		return banner;
+	}
+
 	public void setBannedUUID(UUID bannedUUID) {
 		this.bannedUUID = bannedUUID;
 	}

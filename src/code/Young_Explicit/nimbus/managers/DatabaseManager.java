@@ -1,21 +1,13 @@
 package code.Young_Explicit.nimbus.managers;
 
-import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
 
 public class DatabaseManager {
 
-	public Jedis jedis = new Jedis("localhost");
-
-	public DatabaseManager() {
-		jedis.connect();
-	}
-
-	public Jedis getJedis() {
-		if (jedis.isConnected()) {
-			return jedis;
-		} else {
-			jedis.connect();
-			return jedis;
-		}
+	JedisPool jp = new JedisPool(new JedisPoolConfig(), "192.99.46.113", 7969, 0);
+	
+	public JedisPool getPool() {
+		return jp;
 	}
 }

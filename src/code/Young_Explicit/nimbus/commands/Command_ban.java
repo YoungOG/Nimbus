@@ -16,7 +16,7 @@ public class Command_ban implements CommandExecutor {
 
 	public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
 		if (!p.hasPermission("nimbus.ban")) {
-			p.sendMessage("No Permissions Message");
+			p.sendMessage("§cPermission denied.");
 			return false;
 		}
 
@@ -25,8 +25,12 @@ public class Command_ban implements CommandExecutor {
 			return true;
 		}
 		
-		Player target = Bukkit.getPlayer(args[0]);
-		bm.banPlayer(target, p, StringUtils.join(args, ' ', 1, args.length));
+		if (Bukkit.getPlayer(args[0]) != null) {
+			Player target = Bukkit.getPlayer(args[0]);
+			bm.banPlayer(target, p, StringUtils.join(args, ' ', 1, args.length));
+		} else {
+			bm.banName(args[0], p, StringUtils.join(args, ' ', 1, args.length));
+		}
 
 		return true;
 	}

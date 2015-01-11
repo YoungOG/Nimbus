@@ -15,7 +15,7 @@ public class Command_banip implements CommandExecutor {
 
 	public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
 		if (!p.hasPermission("nimbus.banip")) {
-			p.sendMessage("No Permissions Message");
+			p.sendMessage("§cPermission denied.");
 			return false;
 		}
 
@@ -29,7 +29,7 @@ public class Command_banip implements CommandExecutor {
 			bm.banAddress(ip, p, StringUtils.join(args, ' ', 1, args.length));
 			return true;
 		} else {
-			p.sendMessage(ip + " does not seem to be a valid IP address!");
+			p.sendMessage("§cThat is not a valid IP Address.");
 			return true;
 		}
 	}
